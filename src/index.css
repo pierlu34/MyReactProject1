@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --button-color: #007bff;
+}
+
+* :not(h2){
+  font-family:'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  gap: 10px;
+  
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+form {
+  align-items: center; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Ridotto il gap tra gli elementi */
+  width: 300px; /* Form più stretto */
+  padding: 15px; /* Ridotto il padding */
+  border: #ccc;
+  border-radius: 8px;
+  margin: 20px; /* Margine tra il form e i bordi della pagina */
+  
+}
+
+
+.card{
+  background-color: var(--secondary-background); 
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 10px 0.5rem;
+  padding: 2rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+/* Stile per gli input */
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  gap: 3px;
+}
+
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.recover-password {
+  text-align: center;
+  font-size: 0.75rem; /* Rimpicciolito il testo */
+  margin-top: 10px; /* Distanza dal pulsante */
+  margin-bottom: 0px; /* Eliminato margine inferiore per avvicinarlo al fondo */
+  color: #007bff;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+p {
+  color: red;
+  margin-top: 10px;
+  position:relative
+
+}
+
+.recover-password:hover {
+  text-decoration: underline;
+}
+
+[data-theme='light'] {
+  --background-color: #a6d9ec;
+  --text-color: #333333;
+  --input-background: #e5e6e9;
+  --todo-item-background: #7ea6dc;
+  --secondary-background: #ffffff;
+  --secondary-background-rgb: 255,255,255;
+}
+
+[data-theme="dark"] {
+  --background-color: #3703e5e6;
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --button-color: hsl(210, 99%, 26%);
+   --secondary-background: #1e1e1e;
+}
