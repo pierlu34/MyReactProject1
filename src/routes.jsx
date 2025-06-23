@@ -5,7 +5,7 @@ import RegistrationForm from "./components/registration/Registration.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 import AuthLayout from "./components/AuthLayout/AuthLayout.jsx";
 import MainLayout from "./components/MainLayout/MainLayout.jsx";
-import ActivitiesPage from "./components/Activities/ActivitiesPage/ActivitiesPage";
+import ActivitiesPage from "./components/Activities/ActivitiesPage/ActivitiesPage.jsx";
 
 export const routes = [
   {

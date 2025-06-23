@@ -1,21 +1,16 @@
 import { TabPanel, Tabs } from "../../Tabs/Tabs.jsx";
 import ActivityList from "../ActivityList/ActivityList.jsx";
 import { useCallback, useEffect, useState } from "react";
-import {
-  createActivity,
-  getActivities,
-} from "../../services/activityService.js";
+import { getActivities } from "./../../services/activityService.js";
 import Loader from "../../Loader/Loader.component.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../../../reducers/user.slice.js";
 import {
   activitySelector,
   setActivities,
-  addActivity,
 } from "../../../reducers/activity.slice.js";
-import AddEditActivity from "../AddEditActivity/AddEditActivity.jsx";
-import Modal from "../../Modal/Modal.jsx";
 import { createPortal } from "react-dom";
+import AddActivityModal from "../AddActivityModal/AddActivityModal.jsx";
 
 const ActivitiesPage = () => {
   const activities = useSelector(activitySelector);
@@ -37,10 +32,8 @@ const ActivitiesPage = () => {
       value: "archived",
     },
   ];
-
   const filterActivitiesByStatus = (status) => {
     return activities.filter((activity) => activity.status === status);
-    
   };
 
   const retrieveActivities = useCallback(async () => {
@@ -52,34 +45,24 @@ const ActivitiesPage = () => {
         setIsLoading(false);
       }
     }
-  }, [dispatch, user.accessToken]);
+  }, []);
 
   useEffect(() => {
-    retrieveActivities().catch((e) => console.error(e));
-  }, [retrieveActivities]);
+    retrieveActivities().catch((e) => e);
+  }, []);
 
-  const handleCreateActivity = async (activity) => {
-    const data = await createActivity(activity, user.accessToken);
 
-    if (data) {
-      dispatch(addActivity(data));
-      setAddActivityOpen(false);
-    }
+const handleCreateActivity = (newActivity) => {
+    // Logica per salvare l’attività
+    console.log("Creazione attività:", newActivity);
   };
 
-  const AddActivityModal = (
-    <Modal
+  const modal = (
+    <AddActivityModal
       isOpen={addActivityOpen}
       onClose={() => setAddActivityOpen(false)}
-      header="Aggiungi Attività"
-    >
-      <AddEditActivity onSubmit={handleCreateActivity} />
-      <div className="modal__buttons">
-        <button type="submit" form="add-edit-activity" className="button">
-          Salva attivit&agrave;
-        </button>
-      </div>
-    </Modal>
+      onSubmit={handleCreateActivity}
+    />
   );
 
   return (
@@ -98,7 +81,9 @@ const ActivitiesPage = () => {
           return (
             <TabPanel header={s.label} key={s.value}>
               {!isLoading ? (
-                <ActivityList activities={filterActivitiesByStatus(s.value)} />
+                <ActivityList
+                  activities={filterActivitiesByStatus(s.value)}
+                ></ActivityList>
               ) : (
                 <Loader />
               )}
@@ -106,7 +91,7 @@ const ActivitiesPage = () => {
           );
         })}
       </Tabs>
-      {createPortal(AddActivityModal, document.body)}
+      {createPortal(modal, document.body)}
     </>
   );
 };

@@ -4,6 +4,11 @@ import path from 'path'; // 👈 aggiunto
 
 export default defineConfig({
   plugins: [react()],
+  test: {
+    globals: true,   
+    environment: 'jsdom', // 👈 ambiente di test
+    setupFiles: './tests/Setup.js', // 👈 file di setup per i test
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'), // 👈 alias per /src
