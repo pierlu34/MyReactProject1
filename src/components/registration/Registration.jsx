@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const RegistrationForm = () => {
   const [input, setInput] = useState({
-    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -40,7 +39,7 @@ const RegistrationForm = () => {
     }
 
     const payload = {
-      displayName: formJson.displayName,
+      //username: formJson.username
       email: formJson.email,
       password: formJson.password,
     };
@@ -59,14 +58,7 @@ const RegistrationForm = () => {
     <div className="card">
       <h2 className="form-title">Registrazione</h2>
       <form method="post" onSubmit={handleSubmit}>
-        <label htmlFor="displayName">Username</label>
-        <input
-          id="displayName"
-          value={input.firstName}
-          name="displayName"
-          onChange={handleChange}
-          type="text"
-        />
+        
 
         <label htmlFor="email">Email</label>
         <input
@@ -74,7 +66,7 @@ const RegistrationForm = () => {
           value={input.email}
           name="email"
           onChange={handleChange}
-          type="email"
+          type="text"
         />
         <label htmlFor="password">Password</label>
         <input
@@ -98,10 +90,8 @@ const RegistrationForm = () => {
       {error && <p>{error}</p>}
 
       <Link to="/">
-            <button type="button">
-              Già registrato? Accedi
-            </button>
-            </Link>
+        <button type="button">Già registrato? Accedi</button>
+      </Link>
     </div>
   );
 };

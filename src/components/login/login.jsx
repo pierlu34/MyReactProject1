@@ -33,7 +33,6 @@ const LoginForm = () => {
 
       if (user) {
         dispatch(setUser(user));
-
         navigate("/activities");
       } else {
         alert("Login fallito. Credenziali errate?");

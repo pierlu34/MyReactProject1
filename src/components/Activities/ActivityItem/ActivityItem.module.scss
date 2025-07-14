@@ -7,37 +7,38 @@
   box-shadow: 1px 1px 8px -3px rgba(0, 0, 0, 0.5);
   min-width:600px;
 }
-
+  
 .todoDate {
   font-size: 0.75rem;
   color: var(--text-color);
 }
-
+  
 .todoContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top:10px;
 }
-
+  
 .todoInfo {
-  font-size: 0.875rem;
-  flex:1;
+    font-size: 0.875rem;
+    flex:1;
 }
-
+  
 .todoTitle {
-  font-size:1rem;
-  font-weight:600;
+    font-size:1rem;
+    font-weight:600;
 }
 
 .buttons {
-  display: flex;
-  gap: 3px;
+    display: flex;
+    gap: 3px;
 }
 
-.modalButtons {
-  margin-top:20px;
-  display: flex;
-  gap: 5px;
-  justify-content: flex-end;
+.delete__button {
+  border: none;
+  border-radius: 2px;
+  background-color: #e34646;
+  color:#ffffff;
+  transition:all .3s ease-in-out;
 }

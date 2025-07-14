@@ -7,7 +7,6 @@ export const login = async (loginData) => {
     });
 
     const data = await response.json();
-console.log("Risposta server:", response.status, data);
 
     if (response.ok) {
       return data;

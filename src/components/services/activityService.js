@@ -1,4 +1,4 @@
-import config from "@/components/config.js";
+import config from ".././../../config.js";
 
 export const getActivities = async (token) => {
   try {
@@ -95,7 +95,7 @@ export const changeActivityStatus = async (id, status, token) => {
   }
 };
 
-export const deleteActivity = async (id, token) => {
+export const deleteActivityService = async (id, token) => {
   try {
     const response = await fetch(
       `${config.api.baseUrl}/${config.api.paths.activity}/${id}`,

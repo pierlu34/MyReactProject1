@@ -1,0 +1,64 @@
+.info__element {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+
+.completeButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #218838;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+    }
+
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+}
+
+.reopenButton {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #e0a800;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5);
+    }
+
+    &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+}
