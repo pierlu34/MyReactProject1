@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react";
 import { test, expect, describe } from "vitest";
-import ShareActivityModal from "./ShareActivityModal.jsx";
-import userEvent from '@testing-library/user-event';
+
+
 
 //vi.mock('./../../services/share.service')
 
