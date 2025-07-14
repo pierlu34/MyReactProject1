@@ -1,5 +1,5 @@
 import App from "./App";
-import ErrorPage from "./components/errorpage/errorPage.jsx";
+import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import LoginForm from "./components/login/login.jsx";
 import RegistrationForm from "./components/registration/Registration.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
